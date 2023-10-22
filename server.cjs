@@ -28,7 +28,4 @@ app.post('/get-hourly-details', function (req, res) {
   })
 })
 
-app.listen(8080, () => console.log('server starting at http://localhost:8080/'))
-
-const url = 'http://localhost:8080'
-exec('start' + ' ' + url)
+app.listen()
