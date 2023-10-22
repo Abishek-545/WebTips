@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather project</title>
+        <link rel="icon" type="image/x-icon" href="../Assets/HTML&CSS/Weather_Icons/cloudyIcon.svg">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="./index.js" type="module"></script>
+    </head>
+    <body id="body">
+        <div class = "page-loader">
+            <div class="center">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+        </div>
+        <header class="header-img">
+            <img alt="leftcloudimg" class="left-cloud" src="../Assets/HTML&CSS/GeneralImages&Icons/cloud-8121.png">
+            <img alt="lightning" class="lightning" src="../Assets/HTML&CSS/lightning/pngwing.com(3).png">
+            <img alt="rightcloudimg" class="right-cloud" src="../Assets/HTML&CSS/GeneralImages&Icons/cloud-8121.png">
+
+            <div class="top-segment">
+                <div class="top-front">
+                    <div class="top-img1">
+                        <img id="top-img" src="../Assets/HTML&CSS/Icons_for_cities/anadyr.svg" alt="x">
+                    </div>
+                    <div class="tooltip city-select">
+                        <span class="tooltiptext">select a city</span>
+                        <input placeholder="select a city" value="Anadyr" list="data" class="option-select city" temp="" onfocus="this.temp=this.value; this.value='';">
+                        <datalist value="Anadyr" class="option-select datalist-options" id="data" open="open">
+
+                        </datalist>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="right-down">
+                        <div id="time" class="a">
+                            <h6 class="time-text">
+
+                            </h6>
+                            <img alt="amimg" id="time-img" src="../Assets/HTML&CSS/GeneralImages&Icons/amState.svg">
+                        </div>
+                        <div id="date" class="a">
+                            <h6 id="date-text"></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-middle">
+                    <div class="celcius">
+                        <div id="cel-info">
+                            <h2 id="temp-c">Temp °C</h2>
+                            <h2 id="tempc-val"></h2>
+                        </div>
+                    </div>
+                    <div class="farenh">
+                        <div id="farenh-info">
+                            <h2 id="temp-f">Temp °F </h2>
+                            <h2 id="tempf-val"></h2>
+                        </div>
+                    </div>
+                    <div class="humid">
+                        <div id="humid-infos">
+                            <h2 id="humid-text">Humidity</h2>
+                            <h2 id="humid-val"></h2>
+                        </div>
+                    </div>
+                    <div class="precip">
+                        <div id="precip-infos">
+                            <h2 id="precip-text">Precipitation</h2>
+                            <h2 id="precip-val"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-end">
+                </div>
+            </div>
+        </header>
+        <section class="middle-segment">
+            <div class="midsegment-top">
+                <div class="top-heading">Top cities around world</div>
+                <div class="top-icons">
+                    <div class="tooltip">
+                        <img src ="/Assets/HTML&CSS/Weather_Icons/sunnyIcon.svg" class="mid-ic" id="sunny-ic" width="35vw" height="35vh" alt="sunnyicon">
+                        <span class="tooltiptext">Sunny</span>
+                    </div>
+                    <div class="tooltip">
+                        <img src ="/Assets/HTML&CSS/Weather_Icons/snowflakeIcon.svg" class="mid-ic" id="snowflake-ic" width="30vw" height="30vh" alt="snowflakeicon">
+                        <span class="tooltiptext">snow</span>
+                    </div>
+                    <div class="tooltip">
+                        <img src ="/Assets/HTML&CSS/Weather_Icons/rainyIcon.svg" class="mid-ic" id="rainy-ic" width="30vw" height="30vh" alt="rainyicon">
+                        <span class="tooltiptext">rainy</span>
+                    </div>
+                    <h5 id="display-top">Display Top</h5>
+                    <input id="select-icon" type="number" value="3" placeholder="counter" min="3" max="10">
+                </div>
+            </div>
+            <div class="scroll-itemshorz">
+                <div class="left-arrow">
+                    <img id = "left-scroll-arrow" class="left-arr scroll-arrow" alt="leftarrow" src="/Assets/HTML&CSS/arrows/icons8-back-to-50.png">
+                </div>
+                <div class="items-container">
+                </div>
+                <div class="items-overlay"></div>
+                <div class="right-arrow">
+                    <img id = "right-scroll-arrow" class="right-arr scroll-arrow" alt="rightarrow" src="/Assets/HTML&CSS/arrows/icons8-next-page-50.png">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bottom-segment">
+            <div class="bottom-top">
+                <div></div>
+                <div id="cities-text">Cities across continents at a glance</div>
+                <div class="continent-name">
+                    <div>
+                        Continent name
+                    </div>
+                    <img alt="sort by continent" id="down-arrow" src="/Assets/HTML&CSS/GeneralImages&Icons/arrow-down.svg" class="continent-arrow">
+                </div>
+                <div class="temperature">
+                    <div >
+                        Temperature
+                    </div>
+                    <img alt="sort by temperature" id="up-arrow-temp" src="/Assets/HTML&CSS/GeneralImages&Icons/arrow-down.svg" class="temperature-arrow">
+                </div>
+                <div></div>
+            </div>
+            <div class="bottom-gridcontainer">
+                <div></div>
+                <div class="bottom-itemscontainer">
+
+                </div>
+                <div></div>
+            </div>
+        </section>
+    </body>
+</html>
