@@ -3,6 +3,7 @@ const path = require('path')
 const { fork, exec } = require('child_process')
 
 const app = express()
+app.listen(3000)
 
 let allCityData = ''
 
@@ -28,4 +29,3 @@ app.post('/get-hourly-details', function (req, res) {
   })
 })
 
-app.listen()
